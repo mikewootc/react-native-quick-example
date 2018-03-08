@@ -20,7 +20,7 @@ export default class MyUiComponents extends Component {
         this.state = {
             switchOn: false,
             checked: false,
-            picked: 'react',
+            picked: 'picker',
         }
     }
 
@@ -70,6 +70,7 @@ export default class MyUiComponents extends Component {
                         onValueChange={(value) => this.setState({picked: value})}
                         mode={'dropdown'}
                     >
+                        <Picker.Item label="Picker" value="picker" />
                         <Picker.Item label="React xxxxxxxxxxxxxxx" value="react" />
                         <Picker.Item label="Native ^_^" value="native" />
                     </Picker>
@@ -87,6 +88,10 @@ export default class MyUiComponents extends Component {
                     <Text>Icon</Text>
                     <Icon name="rocket" size={30} color="#ace" />
                 </View>
+
+                <Icon.Button name="rocket" backgroundColor="#48c" onPress={() => {console.log('button pressed');}}>
+                    Icon Button
+                </Icon.Button>
 
             </ScrollView>
         );
