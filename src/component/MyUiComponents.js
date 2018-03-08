@@ -10,6 +10,7 @@ import{
     CheckBox,
     TextInput,
     Picker,
+    ActivityIndicator,
 } from 'react-native'
 
 export default class MyUiComponents extends Component {
@@ -55,11 +56,10 @@ export default class MyUiComponents extends Component {
                     />
                 </View>
 
-                <View style={[styles.itemLineContainer]}>
-                    <TextInput
-                        style={{width: '100%'}}
-                        placeholder='TextInput'
-                        onChangeText={(text) => {xxx}}
+                <View style={[styles.itemLineContainerLayout, styles.itemLineContainer]}>
+                    <Text>ActivityIndicator</Text>
+                    <ActivityIndicator
+                        size='large'
                     />
                 </View>
 
@@ -67,10 +67,19 @@ export default class MyUiComponents extends Component {
                     <Picker
                         selectedValue={this.state.picked}
                         onValueChange={(value) => this.setState({picked: value})}
+                        mode={'dropdown'}
                     >
                         <Picker.Item label="React xxxxxxxxxxxxxxx" value="react" />
                         <Picker.Item label="Native ^_^" value="native" />
                     </Picker>
+                </View>
+
+                <View style={[styles.itemLineContainer]}>
+                    <TextInput
+                        style={{width: '100%'}}
+                        placeholder='TextInput'
+                        onChangeText={(text) => {xxx}}
+                    />
                 </View>
 
             </ScrollView>
