@@ -12,6 +12,7 @@ import{
     Picker,
     ActivityIndicator,
 } from 'react-native'
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class MyUiComponents extends Component {
     constructor() {
@@ -81,6 +82,7 @@ export default class MyUiComponents extends Component {
                         onChangeText={(text) => {xxx}}
                     />
                 </View>
+                <Icon name="rocket" size={30} color="#ace" />
 
             </ScrollView>
         );
