@@ -82,7 +82,11 @@ export default class MyUiComponents extends Component {
                         onChangeText={(text) => {xxx}}
                     />
                 </View>
-                <Icon name="rocket" size={30} color="#ace" />
+
+                <View style={[styles.itemLineContainerLayout, styles.itemLineContainer]}>
+                    <Text>Icon</Text>
+                    <Icon name="rocket" size={30} color="#ace" />
+                </View>
 
             </ScrollView>
         );
