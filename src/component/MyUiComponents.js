@@ -12,6 +12,7 @@ import{
     Picker,
     ActivityIndicator,
     Slider,
+    Alert,
 } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Toast from 'react-native-root-toast';
@@ -25,6 +26,19 @@ export default class MyUiComponents extends Component {
             picked: 'picker',
             sliderValue: 0.3,
         }
+    }
+
+    alertMe() {
+        Alert.alert(
+            'Alert Title',
+            'My Alert Msg',
+            [
+                {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+            { cancelable: false }
+        );
     }
 
     render() {
@@ -69,6 +83,7 @@ export default class MyUiComponents extends Component {
                     <Text>ActivityIndicator</Text>
                     <ActivityIndicator
                         size='large'
+                        animating={false /*需要true才能转动, 默认为true */ }
                     />
                 </View>
 
@@ -111,8 +126,11 @@ export default class MyUiComponents extends Component {
                 </View>
 
                 {/* Icon Button 图标按钮 */}
-                <Icon.Button name="rocket" backgroundColor="#48c" onPress={() => {console.log('button pressed');}}>
-                    Icon Button
+                <Icon.Button name="rocket" backgroundColor="#48c" onPress={() => {
+                    console.log('button pressed');
+                    this.alertMe();
+                }}>
+                    Icon Button         Press to Alert
                 </Icon.Button>
 
             </ScrollView>
