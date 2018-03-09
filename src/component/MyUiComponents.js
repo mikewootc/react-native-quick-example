@@ -11,8 +11,10 @@ import{
     TextInput,
     Picker,
     ActivityIndicator,
+    Slider,
 } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Toast from 'react-native-root-toast';
 
 export default class MyUiComponents extends Component {
     constructor() {
@@ -21,24 +23,28 @@ export default class MyUiComponents extends Component {
             switchOn: false,
             checked: false,
             picked: 'picker',
+            sliderValue: 0.3,
         }
     }
 
     render() {
         return(
             <ScrollView style={{width: '100%'}}>
+                {/* Button & Toast */} 
                 <View style={[styles.itemLineContainerLayout, styles.itemLineContainer]}>
                     <Text>Button</Text>
                     <Button
                         style={{}}
-                        title="Button"
-                        onPress={() => {}}
+                        title="Show Toast"
+                        onPress={() => {
+                            Toast.show('Button pressed');
+                        }}
                         color="#4080f0"
                         accessibilityLabel="Button's accessibilityLabel"
                     />
                 </View>
 
-
+                {/* Switch (bool开关) */}
                 <View style={[styles.itemLineContainerLayout, styles.itemLineContainer]}>
                     <Text>Switch</Text>
                     <Switch
@@ -48,6 +54,7 @@ export default class MyUiComponents extends Component {
                     />
                 </View>
 
+                {/* Checkbox 复选框 */}
                 <View style={[styles.itemLineContainerLayout, styles.itemLineContainer]}>
                     <Text>CheckBox</Text>
                     <CheckBox
@@ -57,6 +64,7 @@ export default class MyUiComponents extends Component {
                     />
                 </View>
 
+                {/* ActivityIndicator Loading圆圈 */}
                 <View style={[styles.itemLineContainerLayout, styles.itemLineContainer]}>
                     <Text>ActivityIndicator</Text>
                     <ActivityIndicator
@@ -64,6 +72,7 @@ export default class MyUiComponents extends Component {
                     />
                 </View>
 
+                {/* Picker 选择器 */}
                 <View style={styles.itemLineContainer}>
                     <Picker
                         selectedValue={this.state.picked}
@@ -76,6 +85,7 @@ export default class MyUiComponents extends Component {
                     </Picker>
                 </View>
 
+                {/* TextInput 输入框 */}
                 <View style={[styles.itemLineContainer]}>
                     <TextInput
                         style={{width: '100%'}}
@@ -84,11 +94,23 @@ export default class MyUiComponents extends Component {
                     />
                 </View>
 
+                {/* Slider 滑动条 */}
+                <View style={[styles.itemLineContainerLayout, styles.itemLineContainer]}>
+                    <Text>Slider : {this.state.sliderValue}</Text>
+                    <Slider
+                        style={{width: 240}}
+                        value={this.state.sliderValue}
+                        onValueChange={(value) => this.setState({sliderValue: value})}
+                    />
+                </View>
+
+                {/* Icon 图标 */}
                 <View style={[styles.itemLineContainerLayout, styles.itemLineContainer]}>
                     <Text>Icon</Text>
                     <Icon name="rocket" size={30} color="#ace" />
                 </View>
 
+                {/* Icon Button 图标按钮 */}
                 <Icon.Button name="rocket" backgroundColor="#48c" onPress={() => {console.log('button pressed');}}>
                     Icon Button
                 </Icon.Button>
