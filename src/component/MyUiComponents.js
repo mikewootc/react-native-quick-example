@@ -16,6 +16,7 @@ import{
 } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Toast from 'react-native-root-toast';
+import { NotificationsAndroid } from 'react-native-notifications';
 
 export default class MyUiComponents extends Component {
     constructor() {
@@ -132,6 +133,20 @@ export default class MyUiComponents extends Component {
                 }}>
                     Icon Button         Press to Alert
                 </Icon.Button>
+
+                <View style={[styles.itemLineContainerLayout, styles.itemLineContainer]}>
+                    <Button
+                        title="Notify"
+                        onPress={() => {
+                            console.log('NotificationsAndroid:', NotificationsAndroid);
+                            NotificationsAndroid.localNotification({
+                                title: 'Notification title',
+                                body : 'This is notification data',
+                                extra: 'This is extra'
+                            });
+                        }}
+                    />
+                </View>
 
             </ScrollView>
         );

@@ -3599,6 +3599,13 @@ react-devtools-core@3.0.0:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
+react-native-notifications@^1.1.19:
+  version "1.1.19"
+  resolved "http://registry.npm.taobao.org/react-native-notifications/download/react-native-notifications-1.1.19.tgz#0b702878ae8c4e46874f6e8e96864acd2a001b4c"
+  dependencies:
+    core-js "^1.0.0"
+    uuid "^2.0.3"
+
 react-native-root-siblings@^3.0.0:
   version "3.0.0"
   resolved "http://registry.npm.taobao.org/react-native-root-siblings/download/react-native-root-siblings-3.0.0.tgz#049f584f83ec5c18f16c5cfe1ef9aada26f685bf"
@@ -4498,6 +4505,10 @@ utils-merge@1.0.1:
 uuid@3.0.1:
   version "3.0.1"
   resolved "http://registry.npm.taobao.org/uuid/download/uuid-3.0.1.tgz#6544bba2dfda8c1cf17e629a3a305e2bb1fee6c1"
+
+uuid@^2.0.3:
+  version "2.0.3"
+  resolved "http://registry.npm.taobao.org/uuid/download/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
 
 uuid@^3.0.0, uuid@^3.1.0:
   version "3.2.1"
